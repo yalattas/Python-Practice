@@ -1,5 +1,8 @@
 from django.shortcuts import render
 import random
+# Import models to view
+#from .models import models
+
 # Create your views here.
 
 def header(request):

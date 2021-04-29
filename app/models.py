@@ -1,3 +1,19 @@
 from django.db import models
+import datetime
 
 # Create your models here.
+class Visitor (models.Model):
+    created_at = models.DateTimeField(default=datetime.datetime.now())
+    modified_at = models.DateTimeField(default=datetime.datetime.now())
+
+    email = models.EmailField()
+    location = models.CharField(
+        choices=(
+            ('SA', 'Saudi Arabia'),
+            ('FR', 'Out of Saudi Arabia'),
+            ('NA','Prefer not to say'),
+        ),
+        default='Prefer not to say',
+        max_length=250
+    )
+    img = models.ImageField(upload_to= 'media')
