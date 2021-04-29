@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.home, name='Home'),
     path('generated-password/', views.generatedPassword, name='linked-password'),
 ]
+
 # from django.conf.urls.static import static
 # from django.conf import settings -> Because we want to read URL base from settings
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

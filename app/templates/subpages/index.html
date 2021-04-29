@@ -31,5 +31,12 @@
         <br>
         <input class="btn btn-primary" type="submit" value="Generate password">
     </form>
+    <br>
+    <h3>Users list</h3>
+    {% for visitor in visitors%}
+        {{ visitor.email }}<br>
+        {{ visitor.img }}<br>
+        <img src="{{ visitor.img }}" height="40" width="20"/>
+    {% endfor %}
 </div>
 </body>
