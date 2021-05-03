@@ -1,3 +1,7 @@
+<!-- Static content -->
+{% load static %}
+<img src="{% static 'IMG_1579.jpg' %}" width="40" height="50"/><br>
+<!-- End of Static content -->
 {% for post in posts %}
 <!-- title is variable in model -->
 {{ post.title }}
