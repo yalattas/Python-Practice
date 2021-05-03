@@ -1,1 +1,13 @@
-Hi <p>Yasser</p>
+{% for post in posts %}
+<!-- title is variable in model -->
+{{ post.title }}
+<br>
+<!-- description is variable in model -->
+{{ post.description }}
+
+<!-- user is variable in model, relation with different app -->
+<h3>{{ post.user }}</h3>
+{{ post.created_at }}
+<br>
+<br>
+{% endfor %}
