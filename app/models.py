@@ -23,5 +23,4 @@ class User(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now())
     modified_at = models.DateTimeField(default=datetime.datetime.now())
 
-    id = models.AutoField(primary_key=True)
     username = models.EmailField()

@@ -4,6 +4,7 @@ from app.models import User
 
 # Create your models here.
 class Post (models.Model):
+    # id = models.UUIDField(primary_key=True, editable=False)
     created_at = models.DateTimeField(default=datetime.datetime.now())
     modified_at = models.DateTimeField(default=datetime.datetime.now())
     title = models.CharField(max_length=800)

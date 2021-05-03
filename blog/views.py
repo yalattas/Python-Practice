@@ -1,4 +1,5 @@
-from django.shortcuts import render
+# get_object_or_404 used in details function
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 # Create your views here.
@@ -7,5 +8,6 @@ def blog_home(request):
     posts = Post.objects.order_by('created_at')
     # posts is a directory coming from above variable passing to view
     return render(request, 'blog/all_home.html', {'posts':posts})
-def details(request, blog_id):
-    return render(request, 'blog/details.html', {'id':blog_id})
+def details(request, post_id):
+    postId = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog/details.html', {'id':postId})
