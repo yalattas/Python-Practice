@@ -11,3 +11,5 @@ class Post (models.Model):
     description = models.TextField(blank=True, null=True)
     # Needs to import User from models in order to use it
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title + '-' + str(self.id)

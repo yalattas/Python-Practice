@@ -18,9 +18,14 @@ class Visitor (models.Model):
     )
     img = models.ImageField(upload_to= 'media')
 
+    def __str__(self):
+        return self.email + '-' + str(self.id)
 
 class User(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now())
     modified_at = models.DateTimeField(default=datetime.datetime.now())
 
     username = models.EmailField()
+
+    def __str__(self):
+        return self.username + '-' + str(self.id)

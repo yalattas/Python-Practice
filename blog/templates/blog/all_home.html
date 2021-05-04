@@ -4,7 +4,7 @@
 <!-- End of Static content -->
 {% for post in posts %}
 <!-- title is variable in model -->
-{{ post.title }}
+<a href="{% url 'Details' post.id %}"><h2>{{ post.title }}</h2></a>
 <br>
 <!-- description is variable in model -->
 {{ post.description }}
