@@ -1,8 +1,8 @@
-
 {% extends "main/footer.html" %}
 
 {% block content %}
 <body>
+
 <div class="container text-center">
     <h2>Hi</h2>
     <br>
@@ -33,11 +33,16 @@
         <input class="btn btn-primary" type="submit" value="Generate password">
     </form>
     <br>
+    <!-- All posts page -->
+    <br>
+    <a href="{% url 'blog:Home_blog' %}">Posts</a>
+    <!-- End of All posts page -->
+    <br>
     <h3>Users list</h3>
     {% for visitor in visitors%}
-        {{ visitor.email }}<br>
-        {{ visitor.img }}<br>
-        <img src="{{ visitor.img }}" height="40" width="20"/>
+    {{ visitor.email }}<br>
+    {{ visitor.img }}<br>
+    <img height="40" src="{{ visitor.img }}" width="20"/>
     {% endfor %}
     <hr>
     Go to <a href="{% url 'blog:Home_blog' %}">Blog</a>

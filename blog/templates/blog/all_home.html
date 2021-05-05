@@ -2,6 +2,10 @@
 {% load static %}
 <img src="{% static 'IMG_1579.jpg' %}" width="40" height="50"/><br>
 <!-- End of Static content -->
+<!-- Posts counter -->
+<!-- posts is coming from the view-->
+<h2>Yasser has written {{ posts.count }} post{{ posts.count|pluralize }}</h2> <!-- # pluralize to add s to after plural word door/doors -->
+<!-- End of Posts counter -->
 {% for post in posts %}
 <!-- title is variable in model -->
 <a href="{% url 'blog:Details' post.id %}"><h2>{{ post.title }}</h2></a>
