@@ -15,7 +15,13 @@
 
 <!-- user is variable in model, relation with different app -->
 <h3>{{ post.user }}</h3>
-{{ post.created_at }}
+<!-- https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date -->
+{{ post.created_at|date:'M d Y'|upper }}<br>
+{{ post.created_at }}<br>
+<!-- safe is a way to accept coming html from the database -->
+<!-- striptags is a way to reject coming html from the database -->
+<!-- Truncating is a way of limiting the fetched content into specify number of chars and add read more button -->
+{{ post.description|safe|truncatechars:50 }}<br>
 <br>
 <br>
 {% endfor %}
