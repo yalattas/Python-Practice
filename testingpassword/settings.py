@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j_7r$@wc^_bv%f30tb)iu8c79uoy#m^2#&v0lvt(y$88&7i^g_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -135,3 +135,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Assigning Media root
 #MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Should be exist only on local machine in order to set configurations to local URL, db and debug mode
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. You must be on production")
